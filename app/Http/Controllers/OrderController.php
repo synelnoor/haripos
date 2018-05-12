@@ -74,7 +74,9 @@ class OrderController extends AppBaseController
     public function store(CreateOrderRequest $request)
     {
         $input = $request->all();
- dd($input);
+       
+        $input['total']= str_replace(',', '',$input['total']);
+        //dd($input['total']);
         $order = $this->orderRepository->create($input);
         $barang= Barang::where('id',$request->id);
        // dd($request['row']);
@@ -85,10 +87,10 @@ class OrderController extends AppBaseController
                 'code_barang'=>$item['code_barang'],
                 'nama_barang'=>$item['nama_barang'],
                 'qty' =>$item['qty'],
-                'harga' =>$item['harga'],
-                'harga_beli' =>$item['harga_beli'],
-                'subtotal' => $item['subtotal'],
-                'laba' => $item['laba']
+                'harga' =>str_replace(',', '',$item['harga']),
+                'harga_beli' =>str_replace(',', '',$item['harga_beli']),
+                'subtotal' => str_replace(',', '',$item['subtotal']),
+                'laba' => str_replace(',', '',$item['laba'])
                
             );
              $this->orderItemRepository->create($dataOrderItem);
@@ -209,10 +211,10 @@ class OrderController extends AppBaseController
                 'code_barang'=>$item['code_barang'],
                 'nama_barang'=>$item['nama_barang'],
                 'qty' =>$item['qty'],
-                'harga' =>$item['harga'],
-                'harga_beli' =>$item['harga_beli'],
-                'subtotal' => $item['subtotal'],
-                'laba' => $item['laba']
+                'harga' =>str_replace(',', '',$item['harga']),
+                'harga_beli' =>str_replace(',', '',$item['harga_beli']),
+                'subtotal' => str_replace(',', '',$item['subtotal']),
+                'laba' => str_replace(',', '',$item['laba'])
                
             );
                 if($item['id']=='')
@@ -225,8 +227,10 @@ class OrderController extends AppBaseController
                     // return redirect(route('itemins.index'));
                     }
         }
-
-        $order = $this->orderRepository->update($request->all(), $id);
+            $update= $request->all();
+            $update['total'] = str_replace(',', '',$update['total']);
+            // dd($update);
+        $order = $this->orderRepository->update($update, $id);
 
         Flash::success('Order updated successfully.');
 

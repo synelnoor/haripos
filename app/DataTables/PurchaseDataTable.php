@@ -18,7 +18,8 @@ class PurchaseDataTable extends DataTable
         return $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', 'admin.purchases.datatables_actions')
-             ->editColumn('tanggal', '{{ date(\'d/m/Y\', strtotime($tanggal)) }}')
+            ->editColumn('tanggal', '{{ date(\'d/m/Y\', strtotime($tanggal)) }}')
+            ->editColumn('total','{{ number_format($total, 2, \',\',\'.\') }}')
             ->make(true);
     }
 

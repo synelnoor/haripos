@@ -4,7 +4,7 @@
 
 <div class="table-responsive">
   <table class="table">
-{!! $dataTable->table(['width' => '100%']) !!}
+{!! $dataTable->table(['width' => '100%','class'=>'table cell-border display dataTable no-footer']) !!}
 	</table>
 </div>
 @section('scripts')
