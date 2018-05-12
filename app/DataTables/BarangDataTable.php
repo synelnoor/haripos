@@ -17,8 +17,8 @@ class BarangDataTable extends DataTable
         return $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', 'admin.barangs.datatables_actions')
-            ->editColumn('harga_beli','{{ number_format($harga_beli, 2, \',\',\'.\') }}')
-            ->editColumn('harga_jual','{{ number_format($harga_jual, 2, \',\',\'.\') }}')
+            ->editColumn('harga_beli','{{ number_format($harga_beli, 2, \'.\',\',\') }}')
+            ->editColumn('harga_jual','{{ number_format($harga_jual, 2, \'.\',\',\') }}')
             ->make(true);
     }
 

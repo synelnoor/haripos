@@ -51,6 +51,8 @@ Route::post('excelPJB',['as'=>'reports.lapBulSheet','uses'=>'ReportController@Ex
 Route::post('cekPG','ReportController@lapPG');
 Route::post('excelPG',['as'=>'reports.lapPGSheet','uses'=>'ReportController@ExportExPG']);
 
+Route::resource('users', 'UserController');
+Route::resource('roles', 'RoleController');
 
 
 Route::resource('pembayarans', 'PembayaranController');

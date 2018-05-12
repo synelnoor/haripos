@@ -21,7 +21,13 @@
     <a href="{!! route('reports.index') !!}"><i class="fa fa-edit"></i><span>Laporan</span></a>
 </li>
 
+<li class="{{ Request::is('admin/users*') ? 'active' : '' }}">
+    <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Users</span></a>
+</li>
 
+<li class="{{ Request::is('admin/roles*') ? 'active' : '' }}">
+    <a href="{!! route('roles.index') !!}"><i class="fa fa-road"></i><span>Roles</span></a>
+</li>
 
 <!-- 
 <li class="{{ Request::is('orderItems*') ? 'active' : '' }}">

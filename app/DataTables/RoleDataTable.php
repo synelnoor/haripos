@@ -2,12 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\Order;
+use App\Role;
 use Form;
 use Yajra\Datatables\Services\DataTable;
-use Carbon\Carbon;
 
-class OrderDataTable extends DataTable
+class RoleDataTable extends DataTable
 {
 
     /**
@@ -17,9 +16,8 @@ class OrderDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'admin.orders.datatables_actions')
-            ->editColumn('tanggal', '{{ date(\'d/m/Y\', strtotime($tanggal)) }}')
-            ->editColumn('total','{{ number_format($total, 2,  \'.\',\',\') }}')
+            //->addColumn('permission', 'admin.roles.datatables_permissions')
+            ->addColumn('action', 'admin.roles.datatables_actions')
             ->make(true);
     }
 
@@ -29,12 +27,10 @@ class OrderDataTable extends DataTable
      * @return \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder
      */
     public function query()
-    {           
-        $now= Carbon::now();
-        $yest= Carbon::yesterday();
-        $orders = Order::whereBetween('tanggal', [$yest, $now]);
+    {
+        $roles = Role::query();
 
-        return $this->applyScopes($orders);
+        return $this->applyScopes($roles);
     }
 
     /**
@@ -61,7 +57,7 @@ class OrderDataTable extends DataTable
                          'buttons' => [
                              'csv',
                              'excel',
-                             'pdf',
+                             /*'pdf',*/
                          ],
                     ],
                     'colvis'
@@ -77,12 +73,9 @@ class OrderDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'nama_customer' => ['name' => 'nama_customer', 'data' => 'nama_customer'],
-            'code_order' => ['name' => 'code_order', 'data' => 'code_order'],
-            'jumlah_barang' => ['name' => 'jumlah_barang', 'data' => 'jumlah_barang'],
-            'total' => ['name' => 'total', 'data' => 'total'],
-            'status' => ['name' => 'status', 'data' => 'status'],
-            'tanggal' => ['name' => 'tanggal', 'data' => 'tanggal']
+            'name' => ['name' => 'name', 'data' => 'name'],
+            'description' => ['name' => 'description', 'data' => 'description'],
+            //'permission' => ['name' => 'permission']
         ];
     }
 
@@ -93,6 +86,6 @@ class OrderDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'orders';
+        return 'roles';
     }
 }
