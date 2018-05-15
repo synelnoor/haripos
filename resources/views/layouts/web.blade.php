@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>NyeruputKopiRasaIndonesia</title>
+    <title>Rumah Makan Hj.Masenah</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,22 +75,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <p>Copyright &copy; NyeruputKopiRasaIndonesia </p>
+                <p>Copyright &copy; Syntax.WebDev </p>
             </div>
         </div>
     </div>
 </div>
 
-   
-    <!-- Javascript -->
+     
     <!-- jQuery 2.2.3 -->
     <script src="{{ asset('vendor/adminlte/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 
     <!-- Bootstrap -->
     <script src="{{ asset('vendor/adminlte/plugins//bootstrap/js/bootstrap.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
-
+ <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+ -->
     <!-- Date Picker App -->
     <script src="{{ asset('vendor/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
 

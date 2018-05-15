@@ -108,7 +108,7 @@ class UserController extends AppBaseController
         $role = $this->roleRepository->all();
 
         $user['role'] = @$user->roles()->first()->id;
-
+        
         if (empty($user)) {
             Flash::error('User not found');
 
@@ -139,7 +139,8 @@ class UserController extends AppBaseController
         $user->roles()->sync([$request->role]);
 
         unset($user['role']);
-
+        //dd($request->all());
+        bcrypt($request->password);
         $user = $this->userRepository->update($request->all(), $id);
 
         Flash::success('User updated successfully.');

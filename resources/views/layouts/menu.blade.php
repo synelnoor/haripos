@@ -1,6 +1,4 @@
-<li class="{{ Request::is('barangs*') ? 'active' : '' }}">
-    <a href="{!! route('barangs.index') !!}"><i class="fa fa-edit"></i><span>Barang</span></a>
-</li>
+@role(['superadministrator','administrator','user','kasir'])
 
 
 
@@ -12,10 +10,16 @@
     <a href="{!! route('pembayarans.index') !!}"><i class="fa fa-edit"></i><span>Pembayaran</span></a>
 </li>
 
+@endrole
+
+@role(['superadministrator','administrator'])
+<li class="{{ Request::is('barangs*') ? 'active' : '' }}">
+    <a href="{!! route('barangs.index') !!}"><i class="fa fa-edit"></i><span>Barang</span></a>
+</li>
+
 <li class="{{ Request::is('purchases*') ? 'active' : '' }}">
     <a href="{!! route('purchases.index') !!}"><i class="fa fa-edit"></i><span>Pengeluaran</span></a>
 </li>
-
 
 <li class="{{ Request::is('reports*') ? 'active' : '' }}">
     <a href="{!! route('reports.index') !!}"><i class="fa fa-edit"></i><span>Laporan</span></a>
@@ -28,9 +32,9 @@
 <li class="{{ Request::is('admin/roles*') ? 'active' : '' }}">
     <a href="{!! route('roles.index') !!}"><i class="fa fa-road"></i><span>Roles</span></a>
 </li>
+@endrole
 
-<!-- 
-<li class="{{ Request::is('orderItems*') ? 'active' : '' }}">
-    <a href="{!! route('orderItems.index') !!}"><i class="fa fa-edit"></i><span>Order Items</span></a>
-</li>
- -->
+
+
+
+

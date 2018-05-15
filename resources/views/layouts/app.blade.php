@@ -199,6 +199,11 @@
     <!-- script autocomplete -->
     <script src="{{asset('js/autoComplete.js')}}"></script>
       <!-- Javascript -->
+      <!-- AdminLTE App -->
+   
+     <script src="{{ asset('vendor/adminlte/dist/js/app.min.js')}}"></script> 
+     <script src="{{ asset('vendor/adminlte/dist/js/demo.js')}}"></script> 
+     <script src="{{ asset('vendor/adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
     <!-- jQuery 2.2.3 -->
     <script src="{{ asset('vendor/adminlte/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
     <script src="{{ asset('vendor/adminlte/plugins/jQueryUI/jquery-ui.min.js')}}"></script>
