@@ -31,7 +31,7 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: #0099cc;">
 <div class="login-box">
     <div class="login-logo">
         <a href="{{ url('/home') }}"><b>Nkri</b>Generator</a>
@@ -79,10 +79,10 @@
                 <!-- /.col -->
             </div>
         </form>
-
+        {{--
         <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
         <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
-
+        --}}
     </div>
     <!-- /.login-box-body -->
 </div>
