@@ -32,7 +32,8 @@ class OrderDataTable extends DataTable
     {           
         $now= Carbon::now();
         $yest= Carbon::yesterday();
-        $orders = Order::whereBetween('tanggal', [$yest, $now]);
+        $orders = Order::whereBetween('tanggal', [$yest, $now])
+                        ->where('status','pending');
 
         return $this->applyScopes($orders);
     }

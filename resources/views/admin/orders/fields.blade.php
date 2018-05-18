@@ -297,20 +297,20 @@ $listinitems = json_encode(@$data);
               console.log(jumlah);
               grandTotal += total;
               grandLaba += laba;
-            $(".form-control.harga").number(true,2)
+           // $(".form-control.harga").number(true,2)
             $( ".form-control.subtotal",row ).val(total.toFixed(2) );
-            $('.form-control.subtotal').number( true, 2 );
+            //$('.form-control.subtotal').number( true, 2 );
             $( ".form-control.laba",row ).val(laba.toFixed(2) );
-            $('.form-control.laba').number( true, 2 );
+            //$('.form-control.laba').number( true, 2 );
 
           });
 
           $(".form-control.jumlah").val(jumlah);
         
           $(".form-control.total").val( grandTotal.toFixed(2));
-          $('.form-control.total').number( true, 2 );
+          //$('.form-control.total').number( true, 2 );
           $(".form-control.totalLaba").val(grandLaba.toFixed(2));
-          $('.form-control.totalLaba').number( true, 2 );
+          //$('.form-control.totalLaba').number( true, 2 );
       }
 
        function additionalTable()

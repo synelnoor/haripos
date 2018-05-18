@@ -16,7 +16,7 @@ use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
